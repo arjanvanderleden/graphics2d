@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@graphics2d/entities": ["packages/entities/entities/src/index.ts"],
+      "@graphics2d/generate-svg": [
+        "packages/generate-svg/generate-svg/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
