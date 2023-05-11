@@ -7,6 +7,6 @@
     "composite": true,
     "jsx": "react"
   },
-  "include": [],
-  "exclude": ["jest.config.ts", "src/test/**/*"]
+  "include": ["src"],
+  "exclude": []
 }

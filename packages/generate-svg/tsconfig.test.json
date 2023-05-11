@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "commonjs",
+    "types": ["jest", "node"],
+    "jsx": "react"
+  },
+  "include": ["jest.config.ts", "test/**/*.test.ts"]
+}

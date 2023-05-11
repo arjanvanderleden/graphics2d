@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "test-entities": "cd packages/entities && jest",
+    "test-generate-svg": "cd packages/generate-svg && jest",
     "generate-examples": "cd packages/examples/examples && ts-node src/main.ts",
     "ts-node-show-config": "cd packages/examples/examples && ts-node --showConfig"
   },

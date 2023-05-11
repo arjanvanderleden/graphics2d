@@ -1,15 +1,16 @@
 /* eslint-disable */
 export default {
-  displayName: 'generate-svg-generate-svg',
+  displayName: 'examples-examples',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
     },
   },
+  testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/packages/generate-svg/generate-svg',
+  coverageDirectory: '../../../coverage/packages/examples/examples',
 };
