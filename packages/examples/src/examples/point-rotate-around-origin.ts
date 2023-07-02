@@ -1,9 +1,3 @@
-
-# point-rotate-around-origin.ts
-
-## Source
-
-```ts
 import { Point, Circle } from '@graphics2d/entities';
 import { SvgElementProperties } from '@graphics2d/generate-svg';
 
@@ -27,11 +21,3 @@ export const entities = [
   }),
   ...points,
 ];
-
-```
-
-
-## Rendered to svg
-
-![point-rotate-around-origin.ts](./point-rotate-around-origin.svg)
-

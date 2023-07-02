@@ -1,9 +1,3 @@
-
-# circle-line-intersection.ts
-
-## Source
-
-```ts
 import { Point, Circle, LineSegment } from '@graphics2d/entities';
 import { SvgElementProperties } from '@graphics2d/generate-svg';
 
@@ -25,11 +19,3 @@ export const entities = [
     p.setData<SvgElementProperties>({ fill: `#${index * 333 + 111}` })
   ),
 ];
-
-```
-
-
-## Rendered to svg
-
-![circle-line-intersection.ts](./circle-line-intersection.svg)
-

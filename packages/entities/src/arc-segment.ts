@@ -6,18 +6,61 @@ import { EntityType, Graphics2DEntity } from './graphics-2d-entity';
 
 export class ArcSegment extends Graphics2DEntity {
   readonly type = EntityType.arcSegment;
-  // three point
+  // center, radius, startAngle, sweptAngle
+  // three point => ArcSegment.createFromThreePoints
   // two point, radius
-  // center, radius, startAngle, endAngle
   // center, startPoint, angle
 
-  constructor(
-    public readonly center: Point,
-    public readonly radius: number,
-    public readonly startAngle: number,
-    public readonly sweptAngle: number
+  static fromThreePoints(
+    startPoint: Point,
+    onArcPoint: Point,
+    endPoint: Point
   ) {
-    super();
+    const { center, radius } =
+      Circle.createFromThreePoints(startPoint, onArcPoint, endPoint) ?? {};
+    if (center === undefined) {
+      return undefined;
+    }
+    const aAngle = center.angleToPoint(startPoint);
+    const cAngle = center.angleToPoint(endPoint);
+
+    const bAngel = center.angleToPoint(onArcPoint);
+    const { startAngle, endAngle } =
+      aAngle - bAngel > cAngle
+        ? { startAngle: aAngle, endAngle: cAngle }
+        : { startAngle: cAngle, endAngle: aAngle };
+
+    return new ArcSegment(center, radius!, startAngle, endAngle);
+  }
+
+  static fromTwoPointAndRadius(
+    firstPoint: Point,
+    secondPoint: Point,
+    radius: number
+  ) {
+    const circle1 = new Circle(firstPoint, radius);
+    const circle2 = new Circle(secondPoint, radius);
+    const [center1, center2] = circle1.intersectWithCircle(circle2);
+    const { minor: minor1, major: major1 } = ArcSegment.minorMajorArc(
+      center1,
+      firstPoint,
+      secondPoint
+    )!;
+    const { minor: minor2, major: major2 } = ArcSegment.minorMajorArc(
+      center2,
+      firstPoint,
+      secondPoint
+    )!;
+    return [minor1, major1, minor2, major2];
+  }
+
+  static fromCenterRadiusAndStartAndSweptAngle(
+    center: Point,
+    radius: number,
+    startAngle: number,
+    sweptAngle: number
+  ) {
+    return new ArcSegment(center, radius, startAngle, sweptAngle);
   }
 
   static minorMajorArc(center: Point, firstPoint: Point, secondPoint: Point) {
@@ -26,7 +69,7 @@ export class ArcSegment extends Graphics2DEntity {
       return undefined;
     }
     const angle =
-      center.angleToPoint(firstPoint) - center.angleToPoint(secondPoint);
+      center.angleToPoint(secondPoint) - center.angleToPoint(firstPoint);
     const otherAngle = angle < 0 ? angle + 360 : angle - 360;
 
     return Math.abs(angle) > Math.abs(otherAngle)
@@ -58,6 +101,15 @@ export class ArcSegment extends Graphics2DEntity {
             otherAngle
           ),
         };
+  }
+
+  constructor(
+    public readonly center: Point,
+    public readonly radius: number,
+    public readonly startAngle: number,
+    public readonly sweptAngle: number
+  ) {
+    super();
   }
 
   clone() {
@@ -124,28 +176,6 @@ export class ArcSegment extends Graphics2DEntity {
       this.startAngle,
       this.sweptAngle
     );
-  }
-
-  static createFromThreePoints(
-    startPoint: Point,
-    onArcPoint: Point,
-    endPoint: Point
-  ) {
-    const { center, radius } =
-      Circle.createFromThreePoints(startPoint, onArcPoint, endPoint) ?? {};
-    if (center === undefined) {
-      return undefined;
-    }
-    const aAngle = center.angleToPoint(startPoint);
-    const cAngle = center.angleToPoint(endPoint);
-
-    const bAngel = center.angleToPoint(onArcPoint);
-    const { startAngle, endAngle } =
-      aAngle - bAngel > cAngle
-        ? { startAngle: aAngle, endAngle: cAngle }
-        : { startAngle: cAngle, endAngle: aAngle };
-
-    return new ArcSegment(center, radius!, startAngle, endAngle);
   }
 
   bounds() {

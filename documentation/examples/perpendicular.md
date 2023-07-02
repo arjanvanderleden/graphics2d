@@ -4,8 +4,8 @@
 ## Source
 
 ```ts
-import { SvgElementProperties } from '../../src/utilities/svg';
-import { LineSegment, Point } from '../../src/entities';
+import { Point, LineSegment } from '@graphics2d/entities';
+import { SvgElementProperties } from '@graphics2d/generate-svg';
 
 const point = new Point(100, 200);
 const line = new LineSegment(new Point(200, 300), new Point(100, -200));

@@ -1,3 +1,4 @@
+import path from 'path';
 import { generateExamples } from './app';
 
 const start = () => {
@@ -14,4 +15,7 @@ const stop = () => {
   process.exit();
 };
 
-start().then(generateExamples).catch(error).finally(stop);
+start()
+  .then(generateExamples(path.join(__dirname, '../../../documentation')))
+  .catch(error)
+  .finally(stop);

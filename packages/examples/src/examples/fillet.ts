@@ -1,9 +1,3 @@
-
-# fillet.ts
-
-## Source
-
-```ts
 import { LineSegment, Point } from '@graphics2d/entities';
 import { SvgElementProperties } from '@graphics2d/generate-svg';
 
@@ -34,11 +28,3 @@ export const entities =
   arc === undefined
     ? []
     : [line1, line2, arc, arc.startPoint(), arc.endPoint()];
-
-```
-
-
-## Rendered to svg
-
-![fillet.ts](./fillet.svg)
-

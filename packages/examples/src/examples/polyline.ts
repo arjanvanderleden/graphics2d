@@ -1,5 +1,5 @@
-import { SvgElementProperties } from '../../src/utilities/svg';
-import { Polyline, Point, PolylineClosedMode } from '../../src/entities';
+import { Point, Polyline, PolylineClosedMode } from '@graphics2d/entities';
+import { SvgElementProperties } from '@graphics2d/generate-svg';
 
 const points = [
   new Point(40, 0),
@@ -11,7 +11,10 @@ const points = [
   new Point(100, -10),
   new Point(40, -10),
 ];
-const polyline = new Polyline(points, PolylineClosedMode.closed).setData<SvgElementProperties>({
+const polyline = new Polyline(
+  points,
+  PolylineClosedMode.closed
+).setData<SvgElementProperties>({
   fill: 'orange',
   fillOpacity: 0.7,
   stroke: '#666',

@@ -1,5 +1,5 @@
-import { SvgElementProperties } from '../../src/utilities/svg';
-import { Circle, Point, ArcSegment } from '../../src/entities';
+import { Circle, Point, ArcSegment } from '@graphics2d/entities';
+import { SvgElementProperties } from '@graphics2d/generate-svg';
 
 const grayArcData: SvgElementProperties = {
   stroke: '#666',
@@ -10,7 +10,10 @@ const grayArcData: SvgElementProperties = {
 const redArcData = { ...grayArcData, stroke: 'red' };
 
 export const entities = [
-  new Circle(Point.origin, 50).setData<SvgElementProperties>({ fill: 'orange', fillOpacity: 0.5 }),
+  new Circle(Point.origin, 50).setData<SvgElementProperties>({
+    fill: 'orange',
+    fillOpacity: 0.5,
+  }),
   new ArcSegment(Point.origin, 75, 0, 90).setData(grayArcData),
   new ArcSegment(Point.origin, 100, 0, -90).setData(redArcData),
   new ArcSegment(Point.origin, 125, 75, 60).setData(grayArcData),

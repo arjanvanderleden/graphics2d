@@ -1,9 +1,3 @@
-
-# circle-tangent.ts
-
-## Source
-
-```ts
 import { Circle, Point, LineSegment } from '@graphics2d/entities';
 import { SvgElementProperties } from '@graphics2d/generate-svg';
 
@@ -34,11 +28,3 @@ export const entities = [
   circle2,
   tangent,
 ];
-
-```
-
-
-## Rendered to svg
-
-![circle-tangent.ts](./circle-tangent.svg)
-

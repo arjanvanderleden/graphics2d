@@ -1,9 +1,3 @@
-
-# perpendicular-bisector.ts
-
-## Source
-
-```ts
 import { LineSegment, Point } from '@graphics2d/entities';
 import { SvgElementProperties } from '@graphics2d/generate-svg';
 
@@ -18,11 +12,3 @@ const bisector = line
   .perpendicularBisector()
   .setData<SvgElementProperties>({ stroke: 'blue', strokeWidth: 4 });
 export const entities = [line, bisector];
-
-```
-
-
-## Rendered to svg
-
-![perpendicular-bisector.ts](./perpendicular-bisector.svg)
-
