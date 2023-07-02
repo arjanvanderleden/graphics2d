@@ -38,7 +38,7 @@ export const entities =
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![fillet.ts](./fillet.svg)
 

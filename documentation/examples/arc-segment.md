@@ -33,7 +33,7 @@ export const entities = [
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![arc-segment.ts](./arc-segment.svg)
 

@@ -31,7 +31,7 @@ export const entities = [
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![point-rotate-around-origin.ts](./point-rotate-around-origin.svg)
 

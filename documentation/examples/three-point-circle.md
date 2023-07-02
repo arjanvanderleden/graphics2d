@@ -49,7 +49,7 @@ export const entities = [circle, ...lines, ...radialEntities, ...points];
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![three-point-circle.ts](./three-point-circle.svg)
 

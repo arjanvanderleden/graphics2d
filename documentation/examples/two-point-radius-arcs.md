@@ -40,7 +40,7 @@ export const entities = [
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![two-point-radius-arcs.ts](./two-point-radius-arcs.svg)
 

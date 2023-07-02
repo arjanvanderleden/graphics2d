@@ -21,7 +21,7 @@ export const entities = [point, line, perpendicularLine, movedLine];
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![perpendicular.ts](./perpendicular.svg)
 

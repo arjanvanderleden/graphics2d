@@ -15,7 +15,26 @@ const stop = () => {
   process.exit();
 };
 
+const files = [
+  'polyline.ts',
+  'perpendicular.ts',
+  'three-point-circle.ts',
+  'circle-line-intersection.ts',
+  'circle-circle-intersection.ts',
+  'perpendicular-bisector.ts',
+  'circle-tangent.ts',
+  'point-rotate-around-origin.ts',
+  'fillet.ts',
+  'arc-segment.ts',
+  'two-point-radius-arcs.ts',
+  'minor-major-arc-segment.ts',
+  'polyline.ts',
+];
+
+const outputFolder = path.join(__dirname, '../../../documentation');
+const inputFolder = path.join(__dirname, 'examples');
+
 start()
-  .then(generateExamples(path.join(__dirname, '../../../documentation')))
+  .then(generateExamples({ outputFolder, inputFolder }, files))
   .catch(error)
   .finally(stop);

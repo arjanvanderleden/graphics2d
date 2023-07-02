@@ -22,7 +22,7 @@ export const entities = [line, bisector];
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![perpendicular-bisector.ts](./perpendicular-bisector.svg)
 

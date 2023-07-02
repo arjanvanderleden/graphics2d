@@ -29,7 +29,7 @@ export const entities = [
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![minor-major-arc-segment.ts](./minor-major-arc-segment.svg)
 

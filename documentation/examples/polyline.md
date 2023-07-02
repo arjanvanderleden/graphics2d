@@ -31,7 +31,7 @@ export const entities = [polyline];
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![polyline.ts](./polyline.svg)
 

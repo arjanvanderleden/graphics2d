@@ -7,7 +7,7 @@ import {
   Svg,
   SvgElementProperties,
 } from '@graphics2d/generate-svg';
-import { replaceExtension } from './index';
+import { OutputInputFolderArgument, replaceExtension } from './index';
 import path from 'path';
 
 export const gridProperties: Omit<GridProperties, 'bounds' | 'id'> = {
@@ -26,8 +26,19 @@ export const addDefaultSvgProperties = (entity: Graphics2DEntity) => {
     : entity;
 };
 
-export async function renderExample(outputFolder: string, fileName: string) {
-  const { entities } = await import(`../examples/${fileName}`);
+export async function renderExample(
+  { outputFolder, inputFolder }: OutputInputFolderArgument,
+  fileName: string
+) {
+  const sourceFileName = path.join(inputFolder, fileName);
+  const svgFileName = path.join(
+    outputFolder,
+    'examples',
+    replaceExtension(fileName, '.svg')
+  );
+  const mdFileName = replaceExtension(svgFileName, '.md');
+
+  const { entities } = await import(sourceFileName);
   const svgString = await renderSvg(
     Svg({
       entity: new Group(entities.map(addDefaultSvgProperties)),
@@ -37,20 +48,13 @@ export async function renderExample(outputFolder: string, fileName: string) {
       width: 500,
     })
   );
-  const svgFileName = replaceExtension(fileName, '.svg');
-  await promises.writeFile(
-    `${outputFolder}/examples/${svgFileName}`,
-    svgString,
-    {
-      encoding: 'utf8',
-    }
-  );
+  await promises.writeFile(svgFileName, svgString, {
+    encoding: 'utf8',
+  });
 
-  const mdFileName = replaceExtension(fileName, '.md');
-  const sourceCode = await promises.readFile(
-    path.join(__dirname, `../examples/${fileName}`)
-  );
+  const sourceCode = await promises.readFile(sourceFileName);
   const sourceMarkDown = '```ts\n' + sourceCode + '\n```\n';
+
   const markDown = `
 # ${fileName}
 
@@ -58,12 +62,13 @@ export async function renderExample(outputFolder: string, fileName: string) {
 
 ${sourceMarkDown}
 
-## Rendered to svg
+## Renders to svg
 
-![${fileName}](./${svgFileName})
+![${fileName}](./${replaceExtension(fileName, '.svg')})
 
 `;
-  await promises.writeFile(`${outputFolder}/examples/${mdFileName}`, markDown, {
+
+  await promises.writeFile(mdFileName, markDown, {
     encoding: 'utf8',
   });
 }

@@ -29,7 +29,7 @@ export const entities = [
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![circle-line-intersection.ts](./circle-line-intersection.svg)
 

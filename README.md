@@ -120,16 +120,19 @@ promises
 
 ## more examples
 
-- [perpendicular](./documentation/examples/perpendicular.md)
-- [three-point-circle](./documentation/examples/three-point-circle.md)
-- [circle-line-intersection](./documentation/examples/circle-line-intersection.md)
-- [circle-circle-intersection](./documentation/examples/circle-circle-intersection.md)
-- [perpendicular-bisector](./documentation/examples/perpendicular-bisector.md)
-- [circle-tangent](./documentation/examples/circle-tangent.md)
-- [point-rotate-around-origin](./documentation/examples/point-rotate-around-origin.md)
-- [fillet](./documentation/examples/fillet.md)
-- [arc-segment](./documentation/examples/arc-segment.md)
-- [polyline](./documentation/examples/polyline.md)
+- [polyline](documentation/examples/polyline.md)
+- [perpendicular](documentation/examples/perpendicular.md)
+- [three-point-circle](documentation/examples/three-point-circle.md)
+- [circle-line-intersection](documentation/examples/circle-line-intersection.md)
+- [circle-circle-intersection](documentation/examples/circle-circle-intersection.md)
+- [perpendicular-bisector](documentation/examples/perpendicular-bisector.md)
+- [circle-tangent](documentation/examples/circle-tangent.md)
+- [point-rotate-around-origin](documentation/examples/point-rotate-around-origin.md)
+- [fillet](documentation/examples/fillet.md)
+- [arc-segment](documentation/examples/arc-segment.md)
+- [two-point-radius-arcs](documentation/examples/two-point-radius-arcs.md)
+- [minor-major-arc-segment](documentation/examples/minor-major-arc-segment.md)
+- [polyline](documentation/examples/polyline.md)
 
 ## todo
 

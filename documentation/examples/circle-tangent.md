@@ -38,7 +38,7 @@ export const entities = [
 ```
 
 
-## Rendered to svg
+## Renders to svg
 
 ![circle-tangent.ts](./circle-tangent.svg)
 
