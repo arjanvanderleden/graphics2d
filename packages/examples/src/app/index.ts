@@ -1,4 +1,3 @@
-// import { renderSvg } from '@graphics2d/generate-svg';
 import { renderExample } from './render-example';
 import path from 'path';
 

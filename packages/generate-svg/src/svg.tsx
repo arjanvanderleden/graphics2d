@@ -9,7 +9,7 @@ interface SvgProps extends SvgElementAttributeProps<Group> {
   backgroundColor?: string;
   margin?: number;
   width?: number;
-  heigth?: number;
+  height?: number;
 }
 
 export const Svg = (props: SvgProps) => {
@@ -22,7 +22,7 @@ export const Svg = (props: SvgProps) => {
     xmlns="http://www.w3.org/2000/svg"
     style={{ backgroundColor }}
     width={props.width}
-    height={props.heigth}
+    height={props.height}
     {...renderSvgElementAttributes(props)}>
     <g transform='scale(1,-1)'>
       <GridLayer
@@ -33,5 +33,5 @@ export const Svg = (props: SvgProps) => {
       />
       {entity.entities().map(toElement)}
     </g>
-  </svg>
-}
+  </svg>;
+};

@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "commonjs",
+    "types": ["jest", "node"],
+    "esModuleInterop": true
+  },
+  "include": [
+    "jest.config.ts",
+    "test/jest-extend-epsilon-check.ts",
+    "test/**/*.test.ts"
+  ]
+}

@@ -3,7 +3,7 @@ import '../jest-extend-epsilon-check';
 
 describe('argSegment.createFromThreePoints', () => {
   it('creates an arc segment', () => {
-    const arcSegment = ArcSegment.createFromThreePoints(
+    const arcSegment = ArcSegment.fromThreePoints(
       new Point(8, 2),
       new Point(-3, 8),
       new Point(-8, -7)

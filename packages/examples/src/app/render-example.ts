@@ -28,7 +28,7 @@ export const addDefaultSvgProperties = (entity: Graphics2DEntity) => {
 
 export async function renderExample(outputFolder: string, fileName: string) {
   const { entities } = await import(`../examples/${fileName}`);
-  const svgString = renderSvg(
+  const svgString = await renderSvg(
     Svg({
       entity: new Group(entities.map(addDefaultSvgProperties)),
       backgroundColor: 'white',

@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test-entities": "cd packages/entities && jest",
-    "test-generate-svg": "cd packages/generate-svg && jest",
+    "test": "jest",
     "generate-examples": "cd packages/examples && ts-node src/main.ts",
     "show-config-generate-examples": "cd packages/examples && ts-node src/main.ts",
     "ts-node-show-config": "cd packages/examples && ts-node --showConfig"
