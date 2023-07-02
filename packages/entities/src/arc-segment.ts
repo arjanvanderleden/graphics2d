@@ -41,17 +41,10 @@ export class ArcSegment extends Graphics2DEntity {
     const circle1 = new Circle(firstPoint, radius);
     const circle2 = new Circle(secondPoint, radius);
     const [center1, center2] = circle1.intersectWithCircle(circle2);
-    const { minor: minor1, major: major1 } = ArcSegment.minorMajorArc(
-      center1,
-      firstPoint,
-      secondPoint
-    )!;
-    const { minor: minor2, major: major2 } = ArcSegment.minorMajorArc(
-      center2,
-      firstPoint,
-      secondPoint
-    )!;
-    return [minor1, major1, minor2, major2];
+    return [
+      ArcSegment.minorMajorArc(center1, firstPoint, secondPoint),
+      ArcSegment.minorMajorArc(center2, firstPoint, secondPoint),
+    ].filter((a) => a !== undefined);
   }
 
   static fromCenterRadiusAndStartAndSweptAngle(
